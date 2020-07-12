@@ -1,11 +1,7 @@
 //*****************************************************************************
 // UpbeatLabs_MCP39F521.h
 //
-// This is a library for the Upbeat Labs Dr. Wattson Energy Monitoring Board
-// --> https://www.tindie.com/products/UpbeatLabs/dr-wattson-energy-monitoring-board-2/
-//
 // Written by Sridhar Rajagopal for Upbeat Labs LLC.
-//
 // BSD 3-Clause License
 
 // Copyright (c) 2018, Upbeat Labs
