@@ -1,12 +1,7 @@
 /*************************************************** 
-  This is a example sketch for Upbeat Labs Dr. Wattson Energy Monitoring Breakout
-  --> https://www.tindie.com/products/UpbeatLabs/dr-wattson-energy-monitoring-board-2/
-
   This example demonstrates getting Energy Data from Dr. Wattson.
-
   Additionally, it also demonstrates getting ZCD (Zero Cross Detection) interrupts. 
   These can be used to trigger a triac, for example, to act as a light dimmer. 
-
   The sketch starts to poll the module for Energy data and prints it out. 
   For ease of seeing the values, use a program like screen to display 
   the Serial output. The serial writes the characters necessary to 
@@ -41,7 +36,6 @@
   interrupt pins 2 and 3. In this example, ZCD is connected to pin 2's
   interrupt
  
-  Written by Sridhar Rajagopal for Upbeat Labs LLC.
   BSD license. All text above must be included in any redistribution
  */
  
