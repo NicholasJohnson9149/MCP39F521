@@ -1,9 +1,3 @@
-/******************************************************/
-//       THIS IS A GENERATED FILE - DO NOT EDIT       //
-/******************************************************/
-
-#include "Particle.h"
-#line 1 "/Users/nicholas/Desktop/argon-test/argon-test/src/MCP39F521.ino"
 /*************************************************** 
   This is a example sketch for Upbeat Labs Dr. Wattson Energy Monitoring Breakout
   --> https://www.tindie.com/products/UpbeatLabs/dr-wattson-energy-monitoring-board-2/
@@ -56,11 +50,6 @@
 
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
-void setup();
-void loop();
-void zcd();
-void printMCP39F521Data(UpbeatLabs_MCP39F521_FormattedData *data);
-#line 53 "/Users/nicholas/Desktop/argon-test/argon-test/src/MCP39F521.ino"
 int led = 13;
 
 UpbeatLabs_MCP39F521 wattson = UpbeatLabs_MCP39F521();
@@ -69,11 +58,8 @@ void setup() {
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT);     
   attachInterrupt(0, zcd, CHANGE);
-  Serial.begin(9600);  //turn on serial communication
-  Serial.println("Upbeat Labs Dr. Wattson Energy Data Example Sketch");
-  Serial.println("**************************************************");
-  
-  wattson.begin(); // Pass in the appropriate address. Defaults to 0x74
+  Serial.begin(9600);  //turn on serial communication  
+  wattson.begin(0x74); // Pass in the appropriate address. Defaults to 0x74
 }
  
 void loop() {
@@ -94,7 +80,6 @@ void loop() {
 }
 
 // Interrupt service routine for ZCD
-
 // Since the voltage crosses zero twice in a cycle,
 // ZCD interrupt will be firing at 50 or 60 Hz * 2
 // or at 100 to 120 times a second. 
@@ -122,7 +107,9 @@ void zcd() {
 
 void printMCP39F521Data(UpbeatLabs_MCP39F521_FormattedData *data)
 {
-  Serial.print(F("Voltage = ")); Serial.println(data->voltageRMS, 4);
+  Serial.print(F("systemStatus = ")); Serial.println(data->systemStatus, 4);
+  Serial.print(F("systemVersion = ")); Serial.println(data->systemVersion, 4);
+  Serial.print(F("Voltage RMS= ")); Serial.println(data->voltageRMS, 4);
   Serial.print(F("Current = ")); Serial.println(data->currentRMS, 4);
   Serial.print(F("Line Frequency = ")); Serial.println(data->lineFrequency, 4);
   Serial.print("Analog Input Voltage = "); Serial.println(data->analogInputVoltage, 4);
